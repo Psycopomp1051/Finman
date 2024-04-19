@@ -26,7 +26,10 @@ const ReportCard = ({ positiveCount, negativeCount, neutralCount, sentimentData 
     const recommendation = getRecommendation(forecastingData, sentimentData);
 
     return (
-        <Card>
+        <Card sx={{
+            width:"300px",
+            boxShadow: "15px 15px 30px rgb(25, 25, 25),-15px -15px 30px rgb(60, 60, 60)"
+        }}>
             <CardContent>
                 <Typography variant="h5" component="div" gutterBottom>
                     Sentiment Analysis Report

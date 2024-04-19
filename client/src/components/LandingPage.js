@@ -43,7 +43,7 @@ const LandingPage = () => {
                     variant="contained"
                     size="small"
                     color='secondary'
-                    onClick={() => navigate('/login')}
+                    onClick={() => navigate('/auth/login')}
                     sx={{
                         padding: '12px',
                         marginRight: '50px',

@@ -75,6 +75,7 @@ function NewsWithSen() {
                                     display: 'flex',
                                     flexDirection: 'column',
                                     justifyContent: 'space-between',
+                                    // boxShadow: "15px 15px 30px rgb(25, 25, 25),-15px -15px 30px rgb(60, 60, 60)"
                                 }}>
                                     {article.urlToImage ? (
                                         <CardMedia

@@ -1,7 +1,8 @@
 import { Alert, Button, Card, CircularProgress, Grid, TextField, Typography, Box } from "@mui/material";
-import signInImage from '../../assets/signin.png';
+import signInImage from '../../assets/signin.jpg';
 import useLogin from "./useLogin";
-import { Link } from "react-router-dom";
+import { Link} from "react-router-dom";
+
 
 const Login = () => {
   const { error, loading, loginUser } = useLogin();
@@ -27,7 +28,11 @@ const Login = () => {
         margin: '0 auto',
       }}
     >
-      <Card className="form-container" sx={{ display: 'flex', flexDirection: 'column', width: '100%', padding: '2rem' }}>
+      <Card className="form-container" sx={{ 
+        display: 'flex', flexDirection: 'column', width: '100%', padding: '2rem'                                    // boxShadow: "15px 15px 30px rgb(25, 25, 25),-15px -15px 30px rgb(60, 60, 60)"
+        ,
+        boxShadow: "15px 15px 30px rgb(25, 25, 25),-15px -15px 30px rgb(60, 60, 60)"
+      }}>
         <Grid container>
           <Grid item xs={12} sm={6} sx={{ bgcolor: '#003366', borderRadius: '18px' }}>
             <div
@@ -45,7 +50,7 @@ const Login = () => {
               Sign In
             </Typography>
             <Typography variant="body1" color="textSecondary" sx={{ mb: 2 }}>
-              Create an account
+              Join to account
             </Typography>
             <form
               onSubmit={handleLogin}
@@ -88,10 +93,23 @@ const Login = () => {
               </Button>
               <Button
                 component={Link}
-                to="/"
+                to="/auth/register"
                 variant="outlined"
                 size="large"
-                sx={{ mt: 2, py: 1.5, px: 4, borderRadius: '12px', borderColor: '#003366', color: '#003366', fontSize: '1rem' }} // Custom styles
+                sx={{
+                  borderRadius: '12px',
+                  borderColor: '#003366',
+                  color: '#003366',
+                  fontSize: '1rem',
+                  bgcolor: '#FF9966',
+                  '&:hover': {
+                    opacity: 0.8,
+                    bgcolor: '#FF9966',
+                  },
+                  mt: 2,
+                  py: 1.5,
+                  px: 4,
+                }}
               >
                 Create Account
               </Button>

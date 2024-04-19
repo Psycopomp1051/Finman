@@ -1,7 +1,7 @@
 // src/Auth/Register.js
 import { Alert, Button, Card, Typography, TextField, CircularProgress,Grid, Box } from "@mui/material";
 import { Link } from "react-router-dom";
-import signUpImage from "../../assets/signup.png";
+import signUpImage from "../../assets/signup.jpg";
 import useSignUp from './useSignUp';
 import { useNavigate } from 'react-router-dom';
 
@@ -19,7 +19,6 @@ const Register = () => {
       passwordConfirm: event.target.passwordConfirm.value
     };
     await registerUser(formData);
-    navigate("/auth/register");
   };
 
   return (
@@ -31,7 +30,10 @@ const Register = () => {
         height: '100vh',
       }}
     >
-      <Card sx={{ display: 'flex', flexDirection: 'column', padding: '2rem', width: '100%', maxWidth: '1000px' }}>
+      <Card sx={{ display: 'flex', flexDirection: 'column', padding: '2rem', width: '100%', maxWidth: '1000px' 
+      ,                                    boxShadow: "15px 15px 30px rgb(25, 25, 25),-15px -15px 30px rgb(60, 60, 60)"
+
+    }}>
         <Grid container spacing={2}>
           <Grid item xs={12} sm={6}>
             <Typography variant="h5" fontWeight="bold" gutterBottom>
@@ -99,11 +101,14 @@ const Register = () => {
               </Button>
               <Button
                 component={Link}
-                to="/login"
+                to="/auth/login"
                 variant="outlined"
                 size="large"
                 fullWidth
-                sx={{ borderRadius: '12px', borderColor: '#003366', color: '#003366', fontSize: '1rem' }}
+                sx={{ borderRadius: '12px', borderColor: '#003366', color: '#003366', fontSize: '1rem',bgcolor:'#FF9966','&:hover': {
+                  opacity: 0.8,
+                  bgcolor:'#FF9966',
+                } }}
               >
                 Sign In
               </Button>

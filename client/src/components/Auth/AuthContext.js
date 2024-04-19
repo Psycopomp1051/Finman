@@ -32,6 +32,9 @@ export const AuthProvider = ({ children }) => {
         setUserData(null);
         setIsAuthenticated(false);
     };
+    const isUserExists = () => {
+        return !!userData; // Returns true if userData exists, otherwise false
+    };
     return (
         <AuthContext.Provider value={{ token, isAuthenticated, login, logout, userData }}>
             {children}
