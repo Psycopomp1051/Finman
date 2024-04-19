@@ -84,7 +84,7 @@ const LandingPage = () => {
                         All things Finance,<br />right here.
                     </Typography>
                     <Button variant='outlined'
-                        onClick={() => navigate('/stock')}
+                        onClick={() => navigate('/auth/login')}
                         sx={{
                             backgroundColor: '#ff9966',
                             mt: '1rem',

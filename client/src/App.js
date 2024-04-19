@@ -1,6 +1,5 @@
 import { ColorModeContext, useMode } from "./theme";
 import { CssBaseline, ThemeProvider } from '@mui/material'
-import Home from "./components/Home";
 import LandingPage from "./components/LandingPage";
 // import LoginSignupPage from "./components/LoginSignupPage";
 import { Routes, Route } from 'react-router-dom'
@@ -23,7 +22,6 @@ function App() {
 
         <Routes>
           <Route path="/" element={<LandingPage />} />
-          <Route path="/home" element={<Home />} />
           <Route path="/auth/*" element={<AuthRoutes />} />
           <Route path="/stock" element={<Stock />} />
           <Route path="/news" element={<News />} />

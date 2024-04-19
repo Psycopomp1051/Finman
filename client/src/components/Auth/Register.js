@@ -3,9 +3,12 @@ import { Alert, Button, Card, Typography, TextField, CircularProgress,Grid, Box 
 import { Link } from "react-router-dom";
 import signUpImage from "../../assets/signup.png";
 import useSignUp from './useSignUp';
+import { useNavigate } from 'react-router-dom';
+
 
 const Register = () => {
   const { loading, error, registerUser } = useSignUp();
+  const navigate = useNavigate()
 
   const handleRegister = async (event) => {
     event.preventDefault();
@@ -16,6 +19,7 @@ const Register = () => {
       passwordConfirm: event.target.passwordConfirm.value
     };
     await registerUser(formData);
+    navigate("/auth/register");
   };
 
   return (

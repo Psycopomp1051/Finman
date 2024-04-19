@@ -12,7 +12,7 @@ app.use(express.json()); // Parse
 app.use('/api/auth', authRouter);
 
 // 3] DB Connection
-mongoose.connect('mongodb://0.0.0.0:27017/authentication')
+mongoose.connect('mongodb+srv://riteshkedar06:YDIG2G9VVPQ5I6FP@cluster0.jfajaqf.mongodb.net/?retryWrites=true&w=majority&appName=Cluster0')
     .then(() => console.log("DB Connected"))
     .catch((err) => console.error(`DB Error: ${err}`));
 

@@ -39,6 +39,9 @@ const NavBar = () => {
                             <Button component={Link} to="/crypto" color="inherit">
                                 Crypto
                             </Button>
+                            <Button component={Link} to="/chat" color="inherit">
+                                Chat
+                            </Button>
                         </Toolbar>
                     </div>
 
