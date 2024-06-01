@@ -13,7 +13,7 @@ import { useSelector } from "react-redux";
 
 function App() {
   const [theme, colorMode] = useMode();
-  const user = useSelector((state) => state.user.email);
+  const user = useSelector((state) => state.user);
   
   return (
     <ColorModeContext.Provider value={colorMode}>

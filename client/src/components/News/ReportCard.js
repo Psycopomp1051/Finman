@@ -14,13 +14,22 @@ const ReportCard = ({ positiveCount, negativeCount, neutralCount, sentimentData 
     const neutralPercentage = ((neutralCount / totalCount) * 100).toFixed(2);
 
     const getRecommendation = (forecastingData) => {
+        if (positivePercentage > 60) { // Check if positive sentiments are greater than 60%
+            return "Buy";
+        } else if (negativePercentage > 60) { // Check if negative sentiments are greater than 60%
+            return "Sell";
+        } else if (neutralPercentage > 60) { // Check if neutral sentiments are greater than 60%
+            return "Hold";
+        }
+    
+        // Original conditions if none of the above conditions meet
         if (positivePercentage > 50) {
-            return (forecastingData.length > 0 && forecastingData[0] > forecastingData[[1]]) ? "Buy" : "Hold";
+            return (forecastingData.length > 0 && forecastingData[0] > forecastingData[1]) ? "Buy" : "Hold";
         } else if (negativePercentage > 50) {
-            return (forecastingData.length > 0 && forecastingData[0] < forecastingData[[1]]) ? "Sell" : "Hold";
+            return (forecastingData.length > 0 && forecastingData[0] < forecastingData[1]) ? "Sell" : "Hold";
         } else {
             return "Hold";
-        }        
+        }      
     };
 
     const recommendation = getRecommendation(forecastingData, sentimentData);
