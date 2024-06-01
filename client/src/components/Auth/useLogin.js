@@ -27,7 +27,7 @@ const navigate = useNavigate()
         try {
             setError(null);
             setLoading(true);
-            const res = await fetch('http://localhost:5001/api/auth/login', {
+            const res = await fetch('https://finaman-nodebackend.onrender.com/api/auth/login', {
                 method: 'POST',
                 body: JSON.stringify(values),
                 headers: {
